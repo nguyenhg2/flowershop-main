@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
-import { AppContext } from '../context/AppContext';
-import { CATEGORIES } from '../data/flowerData';
+import { AppContext } from '../../context/AppContext';
+import { CATEGORIES } from '../../data/flowerData';
 
 export default function Header() {
   const {navigate, cartCount, user, setShowLogin, setUser, showToast} = useContext(AppContext);

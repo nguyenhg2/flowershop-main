@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { AppContext } from '../context/AppContext';
-import { CATEGORIES } from '../data/flowerData';
+import { AppContext } from '../../context/AppContext';
+import { CATEGORIES } from '../../data/flowerData';
 
 export default function Footer() {
   const {navigate} = useContext(AppContext);

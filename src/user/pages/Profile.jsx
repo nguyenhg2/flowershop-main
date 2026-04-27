@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
-import { AppContext } from '../context/AppContext';
-import { PRODUCTS } from '../data/flowerData';
+import { AppContext } from '../../context/AppContext';
+import { PRODUCTS } from '../../data/flowerData';
 import { fmt } from '../components/fmt';
 
 export function ProfilePage() {
