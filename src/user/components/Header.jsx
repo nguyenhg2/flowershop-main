@@ -6,7 +6,7 @@ export default function Header() {
   const {navigate, cartCount, user, setShowLogin, setUser, showToast} = useContext(AppContext);
   const [search, setSearch] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
-
+  
   const doSearch = (e) => {
     e.preventDefault();
     if(search.trim()) {
@@ -48,6 +48,7 @@ export default function Header() {
           ) : (
             <button className="btn btn-outline" onClick={()=>setShowLogin(true)} style={{whiteSpace:'nowrap'}}>Đăng nhập</button>
           )}
+          <button className="btn btn-ghost" onClick={()=>navigate('admin-login')} style={{fontSize:12,marginLeft:8}}>🔒 Admin</button>
         </div>
       </div>
     </header>
