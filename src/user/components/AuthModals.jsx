@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { AppContext } from '../context/AppContext';
+import { AppContext } from '../../context/AppContext';
 
 export function LoginModal() {
   const {setShowLogin, setShowRegister, setUser, showToast} = useContext(AppContext);

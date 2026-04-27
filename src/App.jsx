@@ -1,15 +1,16 @@
 import { useContext } from 'react';
 import { AppContext } from './context/AppContext';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import { LoginModal, RegisterModal } from './components/AuthModals';
-import Home from './pages/Home';
-import Cart from './pages/Cart';
-import { SearchPage } from './pages/Search';
-import { CategoryPage } from './pages/Category';
-import { ProductDetailPage } from './pages/ProductDetail';
-import { ProfilePage } from './pages/Profile';
-import { ContactPage } from './pages/Contact';
+import Header from './user/components/Header';
+import Footer from './user/components/Footer';
+import { LoginModal, RegisterModal } from './user/components/AuthModals';
+import Home from './user/pages/Home';
+import Cart from './user/pages/Cart';
+import { SearchPage } from './user/pages/Search';
+import { CategoryPage } from './user/pages/Category';
+import { ProductDetailPage } from './user/pages/ProductDetail';
+import { ProfilePage } from './user/pages/Profile';
+import { ContactPage } from './user/pages/Contact';
+import { CheckoutPage } from './user/pages/Checkout';
 
 function App() {
   const { page, showLogin, showRegister } = useContext(AppContext);
@@ -18,6 +19,7 @@ function App() {
     switch(page) {
       case 'home': return <Home />;
       case 'cart': return <Cart />;
+      case 'checkout': return <CheckoutPage />;
       case 'search': return <SearchPage />;
       case 'category': return <CategoryPage />;
       case 'product': return <ProductDetailPage />;

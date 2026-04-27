@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { AppContext } from '../context/AppContext';
+import { AppContext } from '../../context/AppContext';
 
 export function ContactPage() {
   const [form, setForm] = useState({name:'',email:'',phone:'',subject:'',message:''});

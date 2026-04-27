@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
-import { AppContext } from '../context/AppContext';
-import { PRODUCTS, CATEGORIES, BANNERS } from '../data/flowerData';
+import { AppContext } from '../../context/AppContext';
+import { PRODUCTS, CATEGORIES, BANNERS } from '../../data/flowerData';
 import ProductCard from '../components/ProductCard';
 
 export default function HomePage() {
