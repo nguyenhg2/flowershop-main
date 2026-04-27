@@ -33,14 +33,13 @@ export function CategoryPage() {
           <div style={{fontSize:13,color:'var(--muted)',marginBottom:4}}>
             <span style={{cursor:'pointer'}} onClick={()=>navigate('home')}>Trang chủ</span> › {catInfo?catInfo.name:'Tất cả sản phẩm'}
           </div>
-          <div style={{fontFamily:'Playfair Display,serif',fontSize:28}}>{catInfo?catInfo.emoji+' '+catInfo.name:'🌸 Tất cả sản phẩm'}</div>
+          <div style={{fontFamily:'Playfair Display,serif',fontSize:28}}>{catInfo?catInfo.name:'Tất cả sản phẩm'}</div>
           <div style={{fontSize:14,color:'var(--muted)',marginTop:4}}>{filtered.length} sản phẩm</div>
         </div>
       </div>
       <div className="container" style={{display:'grid',gridTemplateColumns:'240px 1fr',gap:28,alignItems:'start'}}>
-        {/* Filter */}
         <div style={{background:'#fff',borderRadius:16,border:'1px solid var(--border)',padding:20,position:'sticky',top:80}}>
-          <div style={{fontWeight:800,fontSize:15,marginBottom:16}}>🔽 Bộ lọc</div>
+          <div style={{fontWeight:800,fontSize:15,marginBottom:16}}>Bộ lọc</div>
           <div style={{marginBottom:20}}>
             <div className="form-group"><label>Khoảng giá</label></div>
             <div style={{display:'flex',gap:8}}>
@@ -52,12 +51,11 @@ export function CategoryPage() {
             <div className="form-group"><label>Danh mục</label></div>
             {CATEGORIES.map(c=>(
               <div key={c.id} onClick={()=>navigate('category',{cat:c.id})} style={{padding:'8px 12px',borderRadius:8,cursor:'pointer',fontSize:14,background:cat===c.id?'var(--rose-light)':'',color:cat===c.id?'var(--rose)':'var(--text)',fontWeight:cat===c.id?700:400,marginBottom:2}}>
-                {c.emoji} {c.name}
+                {c.name}
               </div>
             ))}
           </div>
         </div>
-        {/* Products */}
         <div>
           <div style={{display:'flex',gap:8,marginBottom:20,alignItems:'center',flexWrap:'wrap'}}>
             <span style={{fontSize:13,color:'var(--muted)'}}>Sắp xếp:</span>

@@ -1,10 +1,10 @@
 export const CATEGORIES = [
-  {id:'birthday', name:'Hoa Sinh Nhật', emoji:'🎂', color:'#f7d6df'},
-  {id:'opening', name:'Hoa Khai Trương', emoji:'🏮', color:'#fff0d6'},
-  {id:'orchid', name:'Lan Hồ Điệp', emoji:'🌸', color:'#ede6ff'},
-  {id:'wedding', name:'Hoa Cưới', emoji:'💍', color:'#d6f0f7'},
-  {id:'condolence', name:'Hoa Tang Lễ', emoji:'🕊️', color:'#e8e8e8'},
-  {id:'love', name:'Hoa Tình Yêu', emoji:'❤️', color:'#ffd6d6'},
+  {id:'birthday', name:'Hoa Sinh Nhật', color:'#f7d6df'},
+  {id:'opening', name:'Hoa Khai Trương', color:'#fff0d6'},
+  {id:'orchid', name:'Lan Hồ Điệp', color:'#ede6ff'},
+  {id:'wedding', name:'Hoa Cưới', color:'#d6f0f7'},
+  {id:'condolence', name:'Hoa Tang Lễ', color:'#e8e8e8'},
+  {id:'love', name:'Hoa Tình Yêu', color:'#ffd6d6'},
 ];
 
 export const PRODUCTS = [

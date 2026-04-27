@@ -41,7 +41,6 @@ export default function HomePage() {
           {CATEGORIES.map(c=>(
             <div key={c.id} onClick={()=>navigate('category',{cat:c.id})} style={{background:c.color,borderRadius:16,padding:'20px 14px',textAlign:'center',cursor:'pointer',transition:'transform .2s'}}
               onMouseEnter={e=>e.currentTarget.style.transform='translateY(-4px)'} onMouseLeave={e=>e.currentTarget.style.transform=''}>
-              <div style={{fontSize:36,marginBottom:8}}>{c.emoji}</div>
               <div style={{fontWeight:700,fontSize:14,color:'var(--text)'}}>{c.name}</div>
             </div>
           ))}
@@ -51,7 +50,7 @@ export default function HomePage() {
       {/* Sale */}
       <div className="container" style={{marginBottom:48}}>
         <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-end',marginBottom:4}}>
-          <div className="section-title">🔥 Đang Giảm Giá</div>
+          <div className="section-title">Đang Giảm Giá</div>
           <button className="btn btn-ghost" onClick={()=>navigate('category',{filter:'sale'})}>Xem tất cả →</button>
         </div>
         <div className="section-sub">Ưu đãi có thời hạn, đặt ngay kẻo hết!</div>
@@ -62,7 +61,7 @@ export default function HomePage() {
       <div style={{background:'var(--warm)',padding:'48px 0',marginBottom:0}}>
         <div className="container">
           <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-end',marginBottom:4}}>
-            <div className="section-title">⭐ Bán Chạy Nhất</div>
+            <div className="section-title">Bán Chạy Nhất</div>
             <button className="btn btn-ghost" onClick={()=>navigate('category',{sort:'sold'})}>Xem tất cả →</button>
           </div>
           <div className="section-sub">Được khách hàng yêu thích nhất</div>
@@ -73,7 +72,7 @@ export default function HomePage() {
       {/* New */}
       <div className="container" style={{marginTop:48}}>
         <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-end',marginBottom:4}}>
-          <div className="section-title">✨ Hoa Mới Về</div>
+          <div className="section-title">Hoa Mới Về</div>
           <button className="btn btn-ghost">Xem tất cả →</button>
         </div>
         <div className="section-sub">Những mẫu hoa mới nhất vừa cập bến</div>
@@ -84,7 +83,7 @@ export default function HomePage() {
       <div className="container" style={{marginTop:48}}>
         <div style={{background:'linear-gradient(135deg,#c84b6b,#4a7c59)',borderRadius:24,padding:'40px 40px',color:'#fff',display:'grid',gridTemplateColumns:'1fr auto',gap:24,alignItems:'center'}}>
           <div>
-            <div style={{fontFamily:'Playfair Display,serif',fontSize:28,marginBottom:8}}>🚚 Miễn phí giao hàng nội thành</div>
+            <div style={{fontFamily:'Playfair Display,serif',fontSize:28,marginBottom:8}}>Miễn phí giao hàng nội thành</div>
             <div style={{opacity:.9}}>Đơn từ 500.000đ · Giao trong 2-4 giờ · Hoa tươi đảm bảo</div>
           </div>
           <button className="btn" style={{background:'#fff',color:'var(--rose)',padding:'12px 28px',fontSize:15}} onClick={()=>navigate('category',{})}>Đặt hoa ngay</button>
