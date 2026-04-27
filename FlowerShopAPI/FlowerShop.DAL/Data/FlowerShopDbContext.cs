@@ -1,4 +1,3 @@
-using FlowerShop.Common.Helpers;
 using FlowerShop.DAL.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -103,8 +102,8 @@ namespace FlowerShop.DAL.Data
             );
 
             modelBuilder.Entity<User>().HasData(
-                new User { Id = 1, FullName = "Quản Trị Viên", Email = "admin@monglan.vn", Phone = "0901234567", PasswordHash = PasswordHelper.HashPassword("Admin@123"), Role = "Admin", IsActive = true },
-                new User { Id = 2, FullName = "Nguyễn Văn Kiểm Thử", Email = "test@monglan.vn", Phone = "0909876543", PasswordHash = PasswordHelper.HashPassword("Test@123"), Address = "123 Nguyễn Huệ, Quận 1, TP.HCM", Role = "Customer", IsActive = true }
+                new User { Id = 1, FullName = "Quản Trị Viên", Email = "admin@monglan.vn", Phone = "0901234567", PasswordHash = "9dlUIpr23JllA57gEZDzjA==.ZDSPh7tTKI3JWMPRxXklhXac8/oS+PPmYxvKlRDDxRY=", Role = "Admin", IsActive = true },
+                new User { Id = 2, FullName = "Nguyễn Văn Kiểm Thử", Email = "test@monglan.vn", Phone = "0909876543", PasswordHash = "62JkwKPjjiNSuEX+PK1pkw==.nk3d07hgqb4iwNsWNGwrKPqVtItNWzueXf0fNFp10HE=", Address = "123 Nguyễn Huệ, Quận 1, TP.HCM", Role = "Customer", IsActive = true }
             );
 
             modelBuilder.Entity<Banner>().HasData(
