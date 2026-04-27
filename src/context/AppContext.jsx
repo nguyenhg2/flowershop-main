@@ -5,6 +5,7 @@ export const AppContext = createContext();
 export function AppProvider({children}) {
   const [page, setPage] = useState('home');
   const [pageParams, setPageParams] = useState({});
+  const [isAdminMode, setIsAdminMode] = useState(false);
   const [cart, setCart] = useState(() => {
     try {
       const saved = localStorage.getItem('flowershop_cart');
@@ -79,7 +80,8 @@ export function AppProvider({children}) {
 
   return (
     <AppContext.Provider value={{page,navigate,pageParams,cart,cartCount,cartTotal,addToCart,updateCart,
-      user,setUser,wishlist,setWishlist,orders,setOrders,showToast,showLogin,setShowLogin,showRegister,setShowRegister}}>
+      user,setUser,wishlist,setWishlist,orders,setOrders,showToast,showLogin,setShowLogin,showRegister,setShowRegister,
+      isAdminMode,setIsAdminMode}}>
       {children}
       {toast && <div className="toast">{toast}</div>}
     </AppContext.Provider>
