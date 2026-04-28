@@ -9,16 +9,16 @@ export function ContactPage() {
   return (
     <div className="page">
       <div style={{background:'var(--warm)',padding:'28px 0',marginBottom:40}}>
-        <div className="container"><div style={{fontFamily:'Playfair Display,serif',fontSize:28}}>📞 Liên hệ với chúng tôi</div></div>
+        <div className="container"><div style={{fontFamily:'Playfair Display,serif',fontSize:28}}> Liên hệ với chúng tôi</div></div>
       </div>
       <div className="container" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:40}}>
         <div>
           <div style={{fontFamily:'Playfair Display,serif',fontSize:22,marginBottom:20}}>Thông tin shop</div>
           {[['📍','Địa chỉ','123 Đường Hoa Mai, Phường Bến Nghé, Quận 1, TP.HCM'],
-            ['📞','Điện thoại','0901 234 567 (Hỗ trợ 7:00 - 21:00)'],
+            ['','Điện thoại','0901 234 567 (Hỗ trợ 7:00 - 21:00)'],
             ['✉️','Email','hello@monglan.vn'],
             ['⏰','Giờ làm việc','Thứ 2 – Chủ nhật: 7:00 – 21:00'],
-            ['🚚','Giao hàng','Nội thành TP.HCM, giao trong 2-4 giờ']].map(([i,l,v])=>(
+            ['','Giao hàng','Nội thành TP.HCM, giao trong 2-4 giờ']].map(([i,l,v])=>(
             <div key={l} style={{display:'flex',gap:16,marginBottom:20,alignItems:'flex-start'}}>
               <div style={{width:44,height:44,borderRadius:12,background:'var(--rose-light)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:20,flexShrink:0}}>{i}</div>
               <div>
