@@ -65,12 +65,12 @@ export function ProductDetailPage() {
               </div>
             </div>
             <div style={{display:'flex',gap:12}}>
-              <button className="btn btn-primary" style={{flex:1,justifyContent:'center',fontSize:15,padding:'12px'}} onClick={()=>addToCart(p,qty)}>🛒 Thêm vào giỏ</button>
+              <button className="btn btn-primary" style={{flex:1,justifyContent:'center',fontSize:15,padding:'12px'}} onClick={()=>addToCart(p,qty)}> Thêm vào giỏ</button>
               <button className="btn btn-outline" style={{flex:1,justifyContent:'center',fontSize:15,padding:'12px'}} onClick={()=>{addToCart(p,qty);navigate('cart')}}>⚡ Mua ngay</button>
             </div>
             <div className="divider"/>
             <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:12}}>
-              {[['🚚','Giao hàng 2-4h'],['🌸','Hoa tươi đảm bảo'],['🔄','Đổi trả 24h'],['📞','Tư vấn miễn phí']].map(([i,t])=>(
+              {[['','Giao hàng 2-4h'],['','Hoa tươi đảm bảo'],['🔄','Đổi trả 24h'],['','Tư vấn miễn phí']].map(([i,t])=>(
                 <div key={t} style={{display:'flex',gap:8,alignItems:'center',fontSize:13,color:'var(--muted)'}}>
                   <span>{i}</span><span>{t}</span>
                 </div>

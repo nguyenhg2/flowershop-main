@@ -2,20 +2,20 @@ import { useContext, useState } from 'react';
 import { AppContext } from '../../context/AppContext';
 
 export function AdminLogin() {
-  const { setIsAdminMode, navigate } = useContext(AppContext);
+  const { setIsAdminMode, navigate, setUser } = useContext(AppContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Simple admin check - in real app, this would be API call
     if (email === 'admin@flowershop.com' && password === 'admin123') {
       localStorage.setItem('flowershop_admin', 'true');
+      setUser({ name: 'Admin', email: email, role: 'admin' });
       setIsAdminMode(true);
       navigate('admin-dashboard');
     } else {
-      setError('Email hoặc mật khẩu không đúng!');
+      setError('Email hoac mat khau khong dung!');
     }
   };
 
@@ -23,8 +23,8 @@ export function AdminLogin() {
     <div className="admin-login-page">
       <div className="admin-login-box">
         <div className="admin-login-header">
-          <h1>🌸 Flower Shop Admin</h1>
-          <p>Đăng nhập quản trị</p>
+          <h1>Mong Lan Flower Admin</h1>
+          <p>Dang nhap quan tri</p>
         </div>
         <form onSubmit={handleLogin}>
           <div className="form-group">
@@ -38,7 +38,7 @@ export function AdminLogin() {
             />
           </div>
           <div className="form-group">
-            <label>Mật khẩu</label>
+            <label>Mat khau</label>
             <input 
               type="password" 
               value={password} 
@@ -48,13 +48,13 @@ export function AdminLogin() {
             />
           </div>
           {error && <div className="error-msg">{error}</div>}
-          <button type="submit" className="btn-primary">Đăng nhập</button>
+          <button type="submit" className="btn-primary">Dang nhap</button>
           <button type="button" className="btn-secondary" onClick={() => navigate('home')}>
-            ← Quay lại trang chủ
+            Quay lai trang chu
           </button>
         </form>
         <div className="admin-login-hint">
-          <p>Dùng: admin@flowershop.com / admin123</p>
+          <p>Dung: admin@flowershop.com / admin123</p>
         </div>
       </div>
     </div>

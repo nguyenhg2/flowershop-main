@@ -33,14 +33,14 @@ export function AdminProducts() {
     <div className="admin-dashboard">
       <aside className="admin-sidebar">
         <div className="admin-logo">
-          <h2>🌸 Flower Shop</h2>
+          <h2> Flower Shop</h2>
           <p>Admin Panel</p>
         </div>
         <nav className="admin-nav">
           <button onClick={() => navigate('admin-dashboard')}>📊 Dashboard</button>
-          <button className="active" onClick={() => navigate('admin-products')}>🌹 Sản phẩm</button>
+          <button className="active" onClick={() => navigate('admin-products')}> Sản phẩm</button>
           <button onClick={() => navigate('admin-categories')}>📁 Danh mục</button>
-          <button onClick={() => navigate('admin-orders')}>📦 Đơn hàng</button>
+          <button onClick={() => navigate('admin-orders')}> Đơn hàng</button>
           <button onClick={() => navigate('admin-customers')}>👥 Khách hàng</button>
           <button onClick={() => navigate('admin-reviews')}>⭐ Đánh giá</button>
           <button onClick={() => navigate('admin-banners')}>🖼️ Banner</button>

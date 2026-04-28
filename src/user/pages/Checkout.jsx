@@ -38,11 +38,11 @@ export function CheckoutPage() {
       <div style={{textAlign:'center',maxWidth:400}}>
         <div style={{fontSize:80,marginBottom:16}}>✅</div>
         <div style={{fontFamily:'Playfair Display,serif',fontSize:28,marginBottom:8}}>Đặt hàng thành công!</div>
-        <div style={{color:'var(--muted)',marginBottom:8}}>Cảm ơn bạn đã tin tưởng Mộng Lan Flower 🌸</div>
+        <div style={{color:'var(--muted)',marginBottom:8}}>Cảm ơn bạn đã tin tưởng Mộng Lan Flower </div>
         <div style={{color:'var(--muted)',marginBottom:24,fontSize:14}}>Chúng tôi sẽ liên hệ xác nhận và giao hàng trong 2-4 giờ</div>
         <div style={{display:'flex',gap:12,justifyContent:'center'}}>
           <button className="btn btn-primary" onClick={()=>navigate('home')}>🏠 Về trang chủ</button>
-          <button className="btn btn-outline" onClick={()=>navigate('profile')}>📦 Xem đơn hàng</button>
+          <button className="btn btn-outline" onClick={()=>navigate('profile')}> Xem đơn hàng</button>
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ import { PRODUCTS, CATEGORIES } from '../../data/flowerData';
 export function AdminReports() {
   const { navigate, orders } = useContext(AppContext);
   
-  // Calculate monthly revenue (mock data)
+  
   const monthlyData = [
     {month:'Tháng 1', revenue:15000000, orders:45},
     {month:'Tháng 2', revenue:22000000, orders:62},
@@ -15,7 +15,7 @@ export function AdminReports() {
     {month:'Tháng 6', revenue:orders.reduce((s,o)=>s+o.total,0) || 28000000, orders:orders.length || 80},
   ];
 
-  // Top selling products
+  
   const topProducts = [...PRODUCTS]
     .sort((a,b) => b.sold - a.sold)
     .slice(0, 5);
@@ -26,14 +26,14 @@ export function AdminReports() {
     <div className="admin-dashboard">
       <aside className="admin-sidebar">
         <div className="admin-logo">
-          <h2>🌸 Flower Shop</h2>
+          <h2> Flower Shop</h2>
           <p>Admin Panel</p>
         </div>
         <nav className="admin-nav">
           <button onClick={() => navigate('admin-dashboard')}>📊 Dashboard</button>
-          <button onClick={() => navigate('admin-products')}>🌹 Sản phẩm</button>
+          <button onClick={() => navigate('admin-products')}> Sản phẩm</button>
           <button onClick={() => navigate('admin-categories')}>📁 Danh mục</button>
-          <button onClick={() => navigate('admin-orders')}>📦 Đơn hàng</button>
+          <button onClick={() => navigate('admin-orders')}> Đơn hàng</button>
           <button onClick={() => navigate('admin-customers')}>👥 Khách hàng</button>
           <button onClick={() => navigate('admin-reviews')}>⭐ Đánh giá</button>
           <button onClick={() => navigate('admin-banners')}>🖼️ Banner</button>

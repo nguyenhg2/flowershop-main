@@ -35,7 +35,6 @@ export function AppProvider({children}) {
   const [showLogin, setShowLogin] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
 
-  // Save user to localStorage whenever it changes
   useEffect(() => {
     if (user) {
       localStorage.setItem('flowershop_user', JSON.stringify(user));
@@ -44,12 +43,10 @@ export function AppProvider({children}) {
     }
   }, [user]);
 
-  // Save cart to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem('flowershop_cart', JSON.stringify(cart));
   }, [cart]);
 
-  // Save wishlist to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem('flowershop_wishlist', JSON.stringify(wishlist));
   }, [wishlist]);
@@ -67,7 +64,7 @@ export function AppProvider({children}) {
       if(ex) return c.map(i=>i.id===product.id?{...i,qty:i.qty+qty}:i);
       return [...c, {...product, qty}];
     });
-    showToast('Đã thêm vào giỏ hàng 🛒');
+    showToast('Da them vao gio hang');
   };
 
   const updateCart = (id, qty) => {

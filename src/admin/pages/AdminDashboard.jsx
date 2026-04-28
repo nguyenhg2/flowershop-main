@@ -5,7 +5,7 @@ import { PRODUCTS, CATEGORIES } from '../../data/flowerData';
 export function AdminDashboard() {
   const { navigate, setIsAdminMode, user, orders, setOrders } = useContext(AppContext);
   
-  // Calculate stats
+  
   const totalProducts = PRODUCTS.length;
   const todayOrders = orders.filter(o => new Date(o.date).toDateString() === new Date().toDateString());
   const todayRevenue = todayOrders.reduce((sum, o) => sum + o.total, 0);
@@ -23,14 +23,14 @@ export function AdminDashboard() {
     <div className="admin-dashboard">
       <aside className="admin-sidebar">
         <div className="admin-logo">
-          <h2>🌸 Flower Shop</h2>
+          <h2> Flower Shop</h2>
           <p>Admin Panel</p>
         </div>
         <nav className="admin-nav">
           <button className="active" onClick={() => navigate('admin-dashboard')}>📊 Dashboard</button>
-          <button onClick={() => navigate('admin-products')}>🌹 Sản phẩm</button>
+          <button onClick={() => navigate('admin-products')}> Sản phẩm</button>
           <button onClick={() => navigate('admin-categories')}>📁 Danh mục</button>
-          <button onClick={() => navigate('admin-orders')}>📦 Đơn hàng</button>
+          <button onClick={() => navigate('admin-orders')}> Đơn hàng</button>
           <button onClick={() => navigate('admin-customers')}>👥 Khách hàng</button>
           <button onClick={() => navigate('admin-reviews')}>⭐ Đánh giá</button>
           <button onClick={() => navigate('admin-banners')}>🖼️ Banner</button>
@@ -51,7 +51,7 @@ export function AdminDashboard() {
 
         <div className="admin-stats-grid">
           <div className="stat-card">
-            <div className="stat-icon">📦</div>
+            <div className="stat-icon"></div>
             <div className="stat-info">
               <h3>{orders.length}</h3>
               <p>Tổng đơn hàng</p>
@@ -72,7 +72,7 @@ export function AdminDashboard() {
             </div>
           </div>
           <div className="stat-card">
-            <div className="stat-icon">🌹</div>
+            <div className="stat-icon"></div>
             <div className="stat-info">
               <h3>{totalProducts}</h3>
               <p>Sản phẩm</p>

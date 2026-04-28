@@ -1,35 +1,35 @@
 export const CATEGORIES = [
-  {id:'birthday', name:'Hoa Sinh Nhật', color:'#f7d6df'},
-  {id:'opening', name:'Hoa Khai Trương', color:'#fff0d6'},
-  {id:'orchid', name:'Lan Hồ Điệp', color:'#ede6ff'},
-  {id:'wedding', name:'Hoa Cưới', color:'#d6f0f7'},
-  {id:'condolence', name:'Hoa Tang Lễ', color:'#e8e8e8'},
-  {id:'love', name:'Hoa Tình Yêu', color:'#ffd6d6'},
+  {id:'birthday', name:'Hoa Sinh Nhat', color:'#f7d6df'},
+  {id:'opening', name:'Hoa Khai Truong', color:'#fff0d6'},
+  {id:'orchid', name:'Lan Ho Diep', color:'#ede6ff'},
+  {id:'wedding', name:'Hoa Cuoi', color:'#d6f0f7'},
+  {id:'condolence', name:'Hoa Tang Le', color:'#e8e8e8'},
+  {id:'love', name:'Hoa Tinh Yeu', color:'#ffd6d6'},
 ];
 
 export const PRODUCTS = [
-  {id:1,name:'Bó Hoa Hồng Đỏ Tình Yêu',cat:'love',price:450000,sale:380000,img:'🌹',rating:4.8,reviews:124,sold:312,badge:'hot',desc:'Bó hoa hồng đỏ tươi cao cấp, 20 bông hoa hồng Đà Lạt kết hợp lá xanh sang trọng. Phù hợp làm quà tặng người yêu nhân ngày Valentine, kỷ niệm.',isNew:false},
-  {id:2,name:'Giỏ Hoa Sinh Nhật Pastel',cat:'birthday',price:650000,sale:550000,img:'🌷',rating:4.9,reviews:89,sold:201,badge:'sale',desc:'Giỏ hoa sinh nhật tone pastel nhẹ nhàng với hoa cúc, hoa hồng phấn, lisianthus. Màu sắc tươi vui, thích hợp cho mọi lứa tuổi.',isNew:false},
-  {id:3,name:'Lan Hồ Điệp Trắng Tinh Khôi',cat:'orchid',price:1200000,sale:null,img:'🌸',rating:5.0,reviews:56,sold:98,badge:null,desc:'Chậu lan hồ điệp trắng cao cấp, 2 cành 12-15 bông. Chăm sóc kỹ lưỡng, hoa tươi lâu 30-45 ngày. Sang trọng, thanh lịch.',isNew:true},
-  {id:4,name:'Hoa Khai Trương May Mắn',cat:'opening',price:2500000,sale:2200000,img:'🏵️',rating:4.7,reviews:43,sold:87,badge:'sale',desc:'Kệ hoa khai trương 2 tầng rực rỡ, mang ý nghĩa may mắn, thịnh vượng. Kết hợp hoa cúc, hồng, cát tường màu đỏ-vàng.',isNew:false},
-  {id:5,name:'Bó Hoa Cưới Cô Dâu',cat:'wedding',price:800000,sale:null,img:'💐',rating:4.9,reviews:112,sold:234,badge:'hot',desc:'Bó cầm tay cô dâu sang trọng với hoa hồng trắng, baby breath, phong lan trắng. Kết hợp ribbon lụa cao cấp.',isNew:false},
-  {id:6,name:'Hoa Hướng Dương Rực Rỡ',cat:'birthday',price:350000,sale:300000,img:'🌻',rating:4.6,reviews:78,sold:156,badge:'sale',desc:'Bó hoa hướng dương tươi sáng, mang năng lượng tích cực. Kết hợp lá xanh tươi, gói giấy kraft thân thiện.',isNew:true},
-  {id:7,name:'Giỏ Hoa Chia Buồn',cat:'condolence',price:500000,sale:null,img:'🕊️',rating:4.5,reviews:34,sold:67,badge:null,desc:'Giỏ hoa tang lễ trang nhã, màu trắng và tím nhạt. Thể hiện sự tôn trọng và chia sẻ nỗi đau với gia đình.',isNew:false},
-  {id:8,name:'Bó Hoa Tulip Hà Lan',cat:'love',price:520000,sale:460000,img:'🌷',rating:4.8,reviews:67,sold:143,badge:'new',desc:'Bó tulip nhập khẩu Hà Lan đủ màu sắc: đỏ, vàng, tím, hồng. Hoa tươi nhập về 3 lần/tuần.',isNew:true},
-  {id:9,name:'Lan Hồ Điệp Tím Hoàng Gia',cat:'orchid',price:1500000,sale:null,img:'🌺',rating:4.9,reviews:29,sold:54,badge:null,desc:'Chậu lan hồ điệp tím cao cấp, 2 cành 10-12 bông. Màu tím quý phái, phù hợp làm quà biếu.',isNew:true},
-  {id:10,name:'Kệ Hoa Khai Trương Vạn Phát',cat:'opening',price:3500000,sale:3000000,img:'🌼',rating:4.8,reviews:21,sold:45,badge:'sale',desc:'Kệ hoa khai trương cao cấp 3 tầng, thiết kế hoành tráng. Toàn hoa tươi nhập khẩu, đảm bảo tươi 5-7 ngày.',isNew:false},
-  {id:11,name:'Hoa Hồng Vàng Sang Trọng',cat:'love',price:680000,sale:null,img:'🌼',rating:4.7,reviews:45,sold:98,badge:null,desc:'Bó hoa hồng vàng 15 bông, tượng trưng cho tình yêu vĩnh cửu và sự trân trọng. Kết hợp gypsophila trắng.',isNew:false},
-  {id:12,name:'Giỏ Hoa Sinh Nhật VIP',cat:'birthday',price:1200000,sale:980000,img:'🎁',rating:5.0,reviews:38,sold:72,badge:'hot',desc:'Giỏ hoa sinh nhật cao cấp kết hợp hoa và chocolate Ferrero Rocher, gấu bông dễ thương. Món quà hoàn hảo.',isNew:false},
+  {id:1,name:'Bo Hoa Hong Do Tinh Yeu',cat:'love',price:450000,sale:380000,img:'hoa-hong',rating:4.8,reviews:124,sold:312,badge:'hot',desc:'Bo hoa hong do tuoi cao cap, 20 bong hoa hong Da Lat ket hop la xanh sang trong. Phu hop lam qua tang nguoi yeu nhan ngay Valentine, ky niem.',isNew:false},
+  {id:2,name:'Gio Hoa Sinh Nhat Pastel',cat:'birthday',price:650000,sale:550000,img:'hoa-pastel',rating:4.9,reviews:89,sold:201,badge:'sale',desc:'Gio hoa sinh nhật tone pastel nhe nhang voi hoa cuc, hoa hong phan, lisianthus. Mau sac tuoi vui, thich hop cho moi lua tuoi.',isNew:false},
+  {id:3,name:'Lan Ho Diep Trang Tinh Khoi',cat:'orchid',price:1200000,sale:null,img:'lan-trang',rating:5.0,reviews:56,sold:98,badge:null,desc:'Chau lan ho diep trang cao cap, 2 canh 12-15 bong. Cham soc ky luong, hoa tuoi lau 30-45 ngay. Sang trong, thanh lich.',isNew:true},
+  {id:4,name:'Hoa Khai Truong May Man',cat:'opening',price:2500000,sale:2200000,img:'hoa-khai-truong',rating:4.7,reviews:43,sold:87,badge:'sale',desc:'Ke hoa khai truong 2 tang ruc ro, mang y nghia may man, thinh vuong. Ket hop hoa cuc, hong, cat tuong mau do-vang.',isNew:false},
+  {id:5,name:'Bo Hoa Cuoi Co Dau',cat:'wedding',price:800000,sale:null,img:'hoa-cuoi',rating:4.9,reviews:112,sold:234,badge:'hot',desc:'Bo cam tay co dau sang trong voi hoa hong trang, baby breath, phong lan trang. Ket hop ribbon lua cao cap.',isNew:false},
+  {id:6,name:'Hoa Huong Duong Ruc Ro',cat:'birthday',price:350000,sale:300000,img:'huong-duong',rating:4.6,reviews:78,sold:156,badge:'sale',desc:'Bo hoa huong duong tuoi sang, mang nang luong tich cuc. Ket hop la xanh tuoi, goi giay kraft than thien.',isNew:true},
+  {id:7,name:'Gio Hoa Chia Buon',cat:'condolence',price:500000,sale:null,img:'hoa-chia-buon',rating:4.5,reviews:34,sold:67,badge:null,desc:'Gio hoa tang le trang nha, mau trang va tim nhat. The hien su ton trong va chia se noi dau voi gia dinh.',isNew:false},
+  {id:8,name:'Bo Hoa Tulip Ha Lan',cat:'love',price:520000,sale:460000,img:'tulip',rating:4.8,reviews:67,sold:143,badge:'new',desc:'Bo tulip nhap khau Ha Lan du mau sac: do, vang, tim, hong. Hoa tuoi nhap ve 3 lan/tuan.',isNew:true},
+  {id:9,name:'Lan Ho Diep Tim Hoang Gia',cat:'orchid',price:1500000,sale:null,img:'lan-tim',rating:4.9,reviews:29,sold:54,badge:null,desc:'Chau lan ho diep tim cao cap, 2 canh 10-12 bong. Mau tim quy phai, phu hop lam qua bieu.',isNew:true},
+  {id:10,name:'Ke Hoa Khai Truong Van Phat',cat:'opening',price:3500000,sale:3000000,img:'ke-hoa',rating:4.8,reviews:21,sold:45,badge:'sale',desc:'Ke hoa khai truong cao cap 3 tang, thiet ke hoang trang. Toan hoa tuoi nhap khau, dam bao tuoi 5-7 ngay.',isNew:false},
+  {id:11,name:'Hoa Hong Vang Sang Trong',cat:'love',price:680000,sale:null,img:'hong-vang',rating:4.7,reviews:45,sold:98,badge:null,desc:'Bo hoa hong vang 15 bong, tuong trung cho tinh yeu vinh cuu va su tran trong. Ket hop gypsophila trang.',isNew:false},
+  {id:12,name:'Gio Hoa Sinh Nhat VIP',cat:'birthday',price:1200000,sale:980000,img:'gio-vip',rating:5.0,reviews:38,sold:72,badge:'hot',desc:'Gio hoa sinh nhat cao cap ket hop hoa va chocolate Ferrero Rocher, gau bong de thuong. Mon qua hoan hao.',isNew:false},
 ];
 
 export const REVIEWS = {
-  1:[{id:1,user:'Nguyễn Lan Anh',stars:5,date:'2024-01-15',text:'Hoa rất đẹp, tươi lâu, đóng gói cẩn thận. Giao nhanh trong 2h. Sẽ ủng hộ dài dài!',avatar:'L'},
-     {id:2,user:'Trần Minh Khoa',stars:4,date:'2024-01-10',text:'Hoa đẹp, màu sắc chuẩn như ảnh. Hơi trễ so với giờ hẹn 30p nhưng thông cảm được.',avatar:'M'}],
-  3:[{id:3,user:'Phạm Thu Hương',stars:5,date:'2024-01-20',text:'Lan đẹp tuyệt vời! Mua tặng sếp nhân ngày khai trương, được khen ngợi nhiều. Rất hài lòng!',avatar:'H'}],
+  1:[{id:1,user:'Nguyen Lan Anh',stars:5,date:'2024-01-15',text:'Hoa rat dep, tuoi lau, dong goi can than. Giao nhanh trong 2h. Se ung ho dai dai!',avatar:'L'},
+     {id:2,user:'Tran Minh Khoa',stars:4,date:'2024-01-10',text:'Hoa dep, mau sac chuan nhu anh. Hoi tre so voi gio hen 30p nhung thong cam duoc.',avatar:'M'}],
+  3:[{id:3,user:'Pham Thu Huong',stars:5,date:'2024-01-20',text:'Lan dep tuyet voi! Mua tang sep nhan ngay khai truong, duoc khen ngoi nhieu. Rat hai long!',avatar:'H'}],
 };
 
 export const BANNERS = [
-  {bg:'linear-gradient(135deg,#c84b6b,#8b2d47)',title:'Valentine 2024',sub:'Ưu đãi đặc biệt - Giảm 20% tất cả hoa hồng',cta:'Mua Ngay'},
-  {bg:'linear-gradient(135deg,#c9973a,#8b6520)',title:'Khai Xuân Giáp Thìn',sub:'Miễn phí giao hàng cho đơn từ 500k',cta:'Khám Phá'},
-  {bg:'linear-gradient(135deg,#4a7c59,#2d5a3a)',title:'Lan Hồ Điệp Mới Về',sub:'Hàng nhập khẩu chính hãng, giá tốt nhất',cta:'Xem Ngay'},
+  {bg:'linear-gradient(135deg,#c84b6b,#8b2d47)',title:'Valentine 2024',sub:'Uu dai dac biet - Giam 20% tat ca hoa hong',cta:'Mua Ngay'},
+  {bg:'linear-gradient(135deg,#c9973a,#8b6520)',title:'Khai Xuan Giap Thin',sub:'Mien phi giao hang cho don tu 500k',cta:'Kham Pha'},
+  {bg:'linear-gradient(135deg,#4a7c59,#2d5a3a)',title:'Lan Ho Diep Moi Ve',sub:'Hang nhap khau chinh hang, gia tot nhat',cta:'Xem Ngay'},
 ];

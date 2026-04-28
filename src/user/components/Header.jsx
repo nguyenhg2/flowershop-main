@@ -17,7 +17,8 @@ export default function Header() {
 
   const handleLogout = () => {
     setUser(null);
-    showToast('Đã đăng xuất! Hẹn gặp lại bạn 👋');
+    localStorage.removeItem('flowershop_user');
+    showToast('Da dang xuat! Hen gap lai ban.');
   };
 
   return (
@@ -25,30 +26,30 @@ export default function Header() {
       <div className="container">
         <div style={{display:'flex',alignItems:'center',gap:16,padding:'14px 0'}}>
           <div onClick={()=>navigate('home')} style={{cursor:'pointer',fontFamily:'Playfair Display,serif',fontSize:22,fontWeight:600,color:'var(--rose)',whiteSpace:'nowrap'}}>
-            🌸 Mộng Lan
+            Mong Lan Flower
           </div>
           <nav style={{display:'flex',gap:4,flex:1}}>
-            {CATEGORIES.slice(0,4).map(c=>(
-              <button key={c.id} className="btn btn-ghost" style={{fontSize:13}} onClick={()=>navigate('category',{cat:c.id})}>{c.name}</button>
-            ))}
+            <button className="btn btn-ghost" style={{fontSize:13}} onClick={()=>navigate('home')}>Trang chu</button>
+            <button className="btn btn-ghost" style={{fontSize:13}} onClick={()=>navigate('category',{})}>San pham</button>
+            <button className="btn btn-ghost" style={{fontSize:13}} onClick={()=>navigate('contact')}>Lien he</button>
+            <button className="btn btn-ghost" style={{fontSize:13}} onClick={()=>navigate('profile')}>Tai khoan</button>
           </nav>
           <form onSubmit={doSearch} style={{display:'flex',gap:0,maxWidth:240}}>
-            <input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Tìm hoa..." style={{borderRadius:'20px 0 0 20px',paddingRight:8}}/>
-            <button type="submit" className="btn btn-primary" style={{borderRadius:'0 20px 20px 0',padding:'8px 14px'}}>🔍</button>
+            <input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Tim hoa..." style={{borderRadius:'20px 0 0 20px',paddingRight:8}}/>
+            <button type="submit" className="btn btn-primary" style={{borderRadius:'0 20px 20px 0',padding:'8px 14px'}}>Tim</button>
           </form>
           <button className="btn btn-ghost" onClick={()=>navigate('cart')} style={{position:'relative',padding:'8px 12px'}}>
-            🛒
+            Gio hang
             {cartCount>0&&<span style={{position:'absolute',top:0,right:0,background:'var(--rose)',color:'#fff',borderRadius:'50%',width:18,height:18,fontSize:10,fontWeight:800,display:'flex',alignItems:'center',justifyContent:'center'}}>{cartCount}</span>}
           </button>
           {user ? (
             <div style={{display:'flex',gap:8,alignItems:'center'}}>
-              <button className="btn btn-ghost" onClick={()=>navigate('profile')} style={{fontSize:13}}>👤 {user.name.split(' ').pop()}</button>
-              <button className="btn btn-ghost" style={{fontSize:13}} onClick={handleLogout}>Đăng xuất</button>
+              <button className="btn btn-ghost" onClick={()=>navigate('profile')} style={{fontSize:13}}>{user.name}</button>
+              <button className="btn btn-ghost" style={{fontSize:13}} onClick={handleLogout}>Dang xuat</button>
             </div>
           ) : (
-            <button className="btn btn-outline" onClick={()=>setShowLogin(true)} style={{whiteSpace:'nowrap'}}>Đăng nhập</button>
+            <button className="btn btn-outline" onClick={()=>setShowLogin(true)} style={{whiteSpace:'nowrap'}}>Dang nhap</button>
           )}
-          <button className="btn btn-ghost" onClick={()=>navigate('admin-login')} style={{fontSize:12,marginLeft:8}}>🔒 Admin</button>
         </div>
       </div>
     </header>

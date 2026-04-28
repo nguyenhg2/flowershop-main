@@ -39,7 +39,7 @@ export default function ProductCard({p, horizontal}) {
         </div>
       </div>
       <div style={{padding:'0 16px 16px'}}>
-        <button className="btn btn-primary" style={{width:'100%',justifyContent:'center'}} onClick={()=>addToCart(p)}>🛒 Thêm vào giỏ</button>
+        <button className="btn btn-primary" style={{width:'100%',justifyContent:'center'}} onClick={()=>addToCart(p)}> Thêm vào giỏ</button>
       </div>
     </div>
   );
