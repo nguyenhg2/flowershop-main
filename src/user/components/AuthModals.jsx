@@ -1,20 +1,30 @@
 import { useContext, useState } from 'react';
 import { AppContext } from '../../context/AppContext';
+import axios from 'axios';
 
 export function LoginModal() {
-  const {setShowLogin, setShowRegister, setUser, showToast} = useContext(AppContext);
+  const {setShowLogin, setShowRegister, setUser, showToast, setIsAdminMode, navigate} = useContext(AppContext);
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
   const [err, setErr] = useState('');
 
   const login = async () => {
     try {
-      const response = await axios.post('https:
+      const response = await axios.post('https://localhost:7001/api/auth/login', {
         email: email,
         password: pass
       });
 
-      setUser(response.data.user);
+      const userData = response.data.user;
+      setUser(userData);
+      
+      if (userData.role === 'admin') {
+        setIsAdminMode(true);
+        navigate('admin-dashboard');
+      } else {
+        localStorage.setItem('flowershop_user', JSON.stringify(userData));
+      }
+      
       setShowLogin(false);
       showToast('Chao mung ban quay lai!');
     } catch (error) {
@@ -26,9 +36,9 @@ export function LoginModal() {
     <div className="modal-backdrop" onClick={()=>setShowLogin(false)}>
       <div className="modal" onClick={e=>e.stopPropagation()}>
         <div style={{textAlign:'center',marginBottom:24}}>
-          <div style={{fontSize:48,marginBottom:8}}>Hoa</div>
+          <div style={{fontSize:48,marginBottom:8}}>Hoa tuoi</div>
           <div style={{fontFamily:'Playfair Display,serif',fontSize:24,marginBottom:4}}>Dang nhap</div>
-          <div style={{color:'var(--muted)',fontSize:14}}>Chao mung tro lai Mộng Lan Flower</div>
+          <div style={{color:'var(--muted)',fontSize:14}}>Chao mung tro lai Mong Lan Flower</div>
         </div>
         {err&&<div className="alert alert-error" style={{marginBottom:16}}>{err}</div>}
         <div className="form-group"><label>Email</label><input type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="email@example.com"/></div>
@@ -48,7 +58,7 @@ export function RegisterModal() {
   const [err, setErr] = useState('');
   const set = (k,v) => setForm(f=>({...f,[k]:v}));
 
-  const register = () => {
+  const register = async () => {
     if(!form.name||!form.email||!form.phone||!form.pass){
       setErr('Vui long dien day du thong tin');
       return;
@@ -57,16 +67,22 @@ export function RegisterModal() {
       setErr('Mat khau xac nhan khong khop');
       return;
     }
-    setUser({
-      name:form.name,
-      email:form.email,
-      phone:form.phone,
-      id:Date.now(),
-      role: 'user'
-    });
-
-    setShowRegister(false);
-    showToast('Dang ky thanh cong! Chao mung ban den voi Mộng Lan');
+    try {
+      const response = await axios.post('https://localhost:7001/api/auth/register', {
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        password: form.pass
+      });
+      
+      const userData = response.data.user;
+      setUser(userData);
+      localStorage.setItem('flowershop_user', JSON.stringify(userData));
+      setShowRegister(false);
+      showToast('Dang ky thanh cong! Chao mung ban den voi Mong Lan');
+    } catch (error) {
+      setErr(error.response?.data?.message || 'Co loi xay ra');
+    }
   };
 
   return (
