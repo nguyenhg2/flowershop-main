@@ -21,9 +21,6 @@ namespace FlowerShop.DAL.Models
         [MaxLength(255)]
         public string? ImageUrl { get; set; }
 
-        [MaxLength(10)]
-        public string? Img { get; set; }
-
         public int CategoryId { get; set; }
         public int StockQuantity { get; set; } = 0;
         public int SoldQuantity { get; set; } = 0;
@@ -45,4 +42,3 @@ namespace FlowerShop.DAL.Models
         public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
     }
 }
-    

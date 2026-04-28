@@ -19,7 +19,15 @@ namespace FlowerShop.API.Controllers
         public async Task<IActionResult> GetActive()
         {
             var banners = await _bannerService.GetActiveAsync();
-            return Ok(banners.Select(b => new { bg = b.Background, title = b.Title, sub = b.Subtitle, cta = b.CtaText, imageUrl = b.ImageUrl, linkUrl = b.LinkUrl }));
+            return Ok(banners.Select(b => new
+            {
+                bg = b.Background,
+                title = b.Title,
+                sub = b.Subtitle,
+                cta = b.CtaText,
+                imageUrl = b.ImageUrl,
+                linkUrl = b.LinkUrl
+            }));
         }
 
         [HttpGet("all")]
@@ -33,7 +41,7 @@ namespace FlowerShop.API.Controllers
         public async Task<IActionResult> Create([FromBody] Banner banner)
         {
             await _bannerService.CreateAsync(banner);
-            return Ok(new { message = "Đã tạo banner", id = banner.Id });
+            return Ok(new { message = "Da tao banner", id = banner.Id });
         }
 
         [HttpPut("{id}")]
@@ -41,14 +49,14 @@ namespace FlowerShop.API.Controllers
         {
             banner.Id = id;
             await _bannerService.UpdateAsync(banner);
-            return Ok(new { message = "Đã cập nhật banner" });
+            return Ok(new { message = "Da cap nhat banner" });
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             await _bannerService.DeleteAsync(id);
-            return Ok(new { message = "Đã xóa banner" });
+            return Ok(new { message = "Da xoa banner" });
         }
     }
 }

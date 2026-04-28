@@ -1,6 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\FlowerShopAPI",
+    "\\FlowerShopAPI\\FlowerShop.API",
+    "\\FlowerShopAPI\\FlowerShop.API\\Properties",
+    "\\src",
+    "\\src\\user",
+    "\\src\\user\\components"
   ],
+  "SelectedNode": "\\FlowerShopAPI\\FlowerShop.API\\Properties\\launchSettings.json",
   "PreviewInSolutionExplorer": false
 }

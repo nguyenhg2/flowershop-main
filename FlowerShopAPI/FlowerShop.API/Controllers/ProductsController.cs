@@ -17,17 +17,30 @@ namespace FlowerShop.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll([FromQuery] int? categoryId, [FromQuery] string? cat, [FromQuery] string? keyword, [FromQuery] string? sort, [FromQuery] string? filter, [FromQuery] int page = 1, [FromQuery] int pageSize = 12)
+        public async Task<IActionResult> GetAll(
+            [FromQuery] int? categoryId,
+            [FromQuery] string? cat,
+            [FromQuery] string? keyword,
+            [FromQuery] string? sort,
+            [FromQuery] string? filter,
+            [FromQuery] int page = 1,
+            [FromQuery] int pageSize = 12)
         {
             var result = await _productService.GetPagedAsync(page, pageSize, categoryId, cat, keyword, sort, filter);
-            return Ok(new { items = result.Items.Select(MapProduct), totalCount = result.TotalCount, page, pageSize });
+            return Ok(new
+            {
+                items = result.Items.Select(MapProduct),
+                totalCount = result.TotalCount,
+                page,
+                pageSize
+            });
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetDetail(int id)
         {
             var p = await _productService.GetDetailAsync(id);
-            if (p == null) return NotFound(new { message = "Không tìm thấy sản phẩm" });
+            if (p == null) return NotFound(new { message = "Khong tim thay san pham" });
             return Ok(MapProductDetail(p));
         }
 
@@ -56,7 +69,7 @@ namespace FlowerShop.API.Controllers
         public async Task<IActionResult> GetRelated(int id, [FromQuery] int count = 4)
         {
             var p = await _productService.GetByIdAsync(id);
-            if (p == null) return NotFound(new { message = "Không tìm thấy sản phẩm" });
+            if (p == null) return NotFound(new { message = "Khong tim thay san pham" });
             var products = await _productService.GetRelatedAsync(id, p.CategoryId, count);
             return Ok(products.Select(MapProduct));
         }
@@ -66,52 +79,89 @@ namespace FlowerShop.API.Controllers
         {
             var product = new Product
             {
-                ProductName = dto.ProductName, Description = dto.Description, Price = dto.Price, SalePrice = dto.SalePrice,
-                Img = dto.Img, ImageUrl = dto.ImageUrl, CategoryId = dto.CategoryId, StockQuantity = dto.StockQuantity,
-                Badge = dto.Badge, IsNew = dto.IsNew, IsFeatured = dto.IsFeatured
+                ProductName = dto.ProductName,
+                Description = dto.Description,
+                Price = dto.Price,
+                SalePrice = dto.SalePrice,
+                ImageUrl = dto.ImageUrl,
+                CategoryId = dto.CategoryId,
+                StockQuantity = dto.StockQuantity,
+                Badge = dto.Badge,
+                IsNew = dto.IsNew,
+                IsFeatured = dto.IsFeatured
             };
             await _productService.CreateAsync(product);
-            return Ok(new { message = "Đã tạo sản phẩm", id = product.Id });
+            return Ok(new { message = "Da tao san pham", id = product.Id });
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] ProductDto dto)
         {
             var product = await _productService.GetByIdAsync(id);
-            if (product == null) return NotFound(new { message = "Không tìm thấy sản phẩm" });
+            if (product == null) return NotFound(new { message = "Khong tim thay san pham" });
 
-            product.ProductName = dto.ProductName; product.Description = dto.Description; product.Price = dto.Price;
-            product.SalePrice = dto.SalePrice; product.Img = dto.Img; product.ImageUrl = dto.ImageUrl;
-            product.CategoryId = dto.CategoryId; product.StockQuantity = dto.StockQuantity;
-            product.Badge = dto.Badge; product.IsNew = dto.IsNew; product.IsFeatured = dto.IsFeatured;
+            product.ProductName = dto.ProductName;
+            product.Description = dto.Description;
+            product.Price = dto.Price;
+            product.SalePrice = dto.SalePrice;
+            product.ImageUrl = dto.ImageUrl;
+            product.CategoryId = dto.CategoryId;
+            product.StockQuantity = dto.StockQuantity;
+            product.Badge = dto.Badge;
+            product.IsNew = dto.IsNew;
+            product.IsFeatured = dto.IsFeatured;
 
             await _productService.UpdateAsync(product);
-            return Ok(new { message = "Đã cập nhật sản phẩm" });
+            return Ok(new { message = "Da cap nhat san pham" });
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             await _productService.DeleteAsync(id);
-            return Ok(new { message = "Đã xóa sản phẩm" });
+            return Ok(new { message = "Da xoa san pham" });
         }
 
         private object MapProduct(Product p) => new
         {
-            id = p.Id, name = p.ProductName, cat = p.Category?.Slug ?? "", price = p.Price, sale = p.SalePrice,
-            img = p.Img, imageUrl = p.ImageUrl, rating = p.Rating, reviews = p.ReviewCount, sold = p.SoldQuantity,
-            badge = p.Badge, desc = p.Description, isNew = p.IsNew, categoryId = p.CategoryId
+            id = p.Id,
+            name = p.ProductName,
+            cat = p.Category?.Slug ?? "",
+            price = p.Price,
+            sale = p.SalePrice,
+            imageUrl = p.ImageUrl,
+            rating = p.Rating,
+            reviews = p.ReviewCount,
+            sold = p.SoldQuantity,
+            badge = p.Badge,
+            desc = p.Description,
+            isNew = p.IsNew,
+            categoryId = p.CategoryId
         };
 
         private object MapProductDetail(Product p) => new
         {
-            id = p.Id, name = p.ProductName, cat = p.Category?.Slug ?? "", price = p.Price, sale = p.SalePrice,
-            img = p.Img, imageUrl = p.ImageUrl, rating = p.Rating, reviews = p.ReviewCount, sold = p.SoldQuantity,
-            badge = p.Badge, desc = p.Description, isNew = p.IsNew, categoryId = p.CategoryId, stock = p.StockQuantity,
+            id = p.Id,
+            name = p.ProductName,
+            cat = p.Category?.Slug ?? "",
+            price = p.Price,
+            sale = p.SalePrice,
+            imageUrl = p.ImageUrl,
+            rating = p.Rating,
+            reviews = p.ReviewCount,
+            sold = p.SoldQuantity,
+            badge = p.Badge,
+            desc = p.Description,
+            isNew = p.IsNew,
+            categoryId = p.CategoryId,
+            stock = p.StockQuantity,
             reviewList = p.Reviews.Select(r => new
             {
-                id = r.Id, user = r.User.FullName, stars = r.Stars, date = r.CreatedDate.ToString("yyyy-MM-dd"),
-                text = r.Text, avatar = r.User.FullName.Length > 0 ? r.User.FullName[0].ToString() : "?"
+                id = r.Id,
+                user = r.User.FullName,
+                stars = r.Stars,
+                date = r.CreatedDate.ToString("yyyy-MM-dd"),
+                text = r.Text
             })
         };
     }

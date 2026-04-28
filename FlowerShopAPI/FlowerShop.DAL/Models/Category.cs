@@ -16,9 +16,6 @@ namespace FlowerShop.DAL.Models
         [MaxLength(500)]
         public string? Description { get; set; }
 
-        [MaxLength(10)]
-        public string? Emoji { get; set; }
-
         [MaxLength(20)]
         public string? Color { get; set; }
 

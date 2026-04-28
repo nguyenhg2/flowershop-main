@@ -19,7 +19,13 @@ namespace FlowerShop.API.Controllers
         public async Task<IActionResult> GetAll()
         {
             var categories = await _categoryService.GetActiveAsync();
-            return Ok(categories.Select(c => new { id = c.Slug, dbId = c.Id, name = c.CategoryName, emoji = c.Emoji, color = c.Color }));
+            return Ok(categories.Select(c => new
+            {
+                id = c.Slug,
+                dbId = c.Id,
+                name = c.CategoryName,
+                color = c.Color
+            }));
         }
 
         [HttpGet("all")]
@@ -33,7 +39,7 @@ namespace FlowerShop.API.Controllers
         public async Task<IActionResult> Create([FromBody] Category category)
         {
             await _categoryService.CreateAsync(category);
-            return Ok(new { message = "Đã tạo danh mục", id = category.Id });
+            return Ok(new { message = "Da tao danh muc", id = category.Id });
         }
 
         [HttpPut("{id}")]
@@ -41,14 +47,14 @@ namespace FlowerShop.API.Controllers
         {
             category.Id = id;
             await _categoryService.UpdateAsync(category);
-            return Ok(new { message = "Đã cập nhật danh mục" });
+            return Ok(new { message = "Da cap nhat danh muc" });
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             await _categoryService.DeleteAsync(id);
-            return Ok(new { message = "Đã xóa danh mục" });
+            return Ok(new { message = "Da xoa danh muc" });
         }
     }
 }

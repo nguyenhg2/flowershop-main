@@ -6,7 +6,6 @@ namespace FlowerShop.API.DTOs
         public string? Description { get; set; }
         public decimal Price { get; set; }
         public decimal? SalePrice { get; set; }
-        public string? Img { get; set; }
         public string? ImageUrl { get; set; }
         public int CategoryId { get; set; }
         public int StockQuantity { get; set; }
